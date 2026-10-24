@@ -33,6 +33,20 @@ The Go, Java, C#/.NET, Ruby, PHP, and Rust clients are generated from the API
 specification. Their API shapes differ from the maintained TypeScript and Python
 clients; use each repository's own examples.
 
+## Framework integrations
+
+LangChain and LlamaIndex adapters use the maintained Python SDK. Both
+previews retain their **proprietary license**. See each repository
+for its existing license declaration and release notes.
+
+| Framework | Source | Tested GitHub preview |
+| --- | --- | --- |
+| LangChain | [langchain-originchain](https://github.com/originchaindb/langchain-originchain) | [v0.1.0-rc.1](https://github.com/originchaindb/langchain-originchain/releases/tag/v0.1.0-rc.1) |
+| LlamaIndex | [llama-index-vector-stores-originchain](https://github.com/originchaindb/llama-index-vector-stores-originchain) | [v0.1.0-rc.1](https://github.com/originchaindb/llama-index-vector-stores-originchain/releases/tag/v0.1.0-rc.1) |
+
+Download tested wheels and verification receipts from the linked releases.
+PyPI publication remains separate.
+
 ## Get started
 
 1. Read the [quickstart](https://originchaindb.com/docs/quickstart/).
