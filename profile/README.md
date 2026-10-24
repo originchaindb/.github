@@ -13,7 +13,7 @@ instructions. TypeScript also supports JavaScript.
 
 | Language | Source repository | GitHub preview |
 | --- | --- | --- |
-| TypeScript / JavaScript | [originchadb](https://github.com/originchaindb/originchadb) | [v0.7.0-rc.5](https://github.com/originchaindb/originchadb/releases/tag/v0.7.0-rc.5) |
+| TypeScript / JavaScript | [originchaindb](https://github.com/originchaindb/originchaindb) | [v0.7.0-rc.5](https://github.com/originchaindb/originchaindb/releases/tag/v0.7.0-rc.5) |
 | Python | [originchain-python](https://github.com/originchaindb/originchain-python) | [v0.10.0-rc.4](https://github.com/originchaindb/originchain-python/releases/tag/v0.10.0-rc.4) |
 | Go | [originchaindb-go](https://github.com/originchaindb/originchaindb-go) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-go/releases/tag/v0.3.0-rc.1) |
 | Java | [originchaindb-java](https://github.com/originchaindb/originchaindb-java) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-java/releases/tag/v0.3.0-rc.1) |
