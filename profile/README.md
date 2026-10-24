@@ -11,10 +11,10 @@ vector search, full-text search, graph queries, and AI applications.
 Choose a language below, then follow that repository's release installation
 instructions. TypeScript also supports JavaScript.
 
-| Language | Source repository | Tested GitHub preview |
+| Language | Source repository | GitHub preview |
 | --- | --- | --- |
-| TypeScript / JavaScript | [originchadb](https://github.com/originchaindb/originchadb) | [v0.7.0-rc.4](https://github.com/originchaindb/originchadb/releases/tag/v0.7.0-rc.4) |
-| Python | [originchain-python](https://github.com/originchaindb/originchain-python) | [v0.10.0-rc.3](https://github.com/originchaindb/originchain-python/releases/tag/v0.10.0-rc.3) |
+| TypeScript / JavaScript | [originchadb](https://github.com/originchaindb/originchadb) | [v0.7.0-rc.5](https://github.com/originchaindb/originchadb/releases/tag/v0.7.0-rc.5) |
+| Python | [originchain-python](https://github.com/originchaindb/originchain-python) | [v0.10.0-rc.4](https://github.com/originchaindb/originchain-python/releases/tag/v0.10.0-rc.4) |
 | Go | [originchaindb-go](https://github.com/originchaindb/originchaindb-go) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-go/releases/tag/v0.3.0-rc.1) |
 | Java | [originchaindb-java](https://github.com/originchaindb/originchaindb-java) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-java/releases/tag/v0.3.0-rc.1) |
 | C# / .NET | [originchaindb-csharp](https://github.com/originchaindb/originchaindb-csharp) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-csharp/releases/tag/v0.3.0-rc.1) |
@@ -22,12 +22,9 @@ instructions. TypeScript also supports JavaScript.
 | PHP | [originchaindb-php](https://github.com/originchaindb/originchaindb-php) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-php/releases/tag/v0.3.0-rc.1) |
 | Rust | [originchaindb-rust](https://github.com/originchaindb/originchaindb-rust) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-rust/releases/tag/v0.3.0-rc.1) |
 
-All eight linked previews passed installed-package live SQL, graph, vector,
-full-text search and query-metrics checks, alongside build, compatibility
-and mock API checks.
-Successful Ask execution and stable registry promotion remain separate
-requirements. Download tested assets and verification receipts from the linked
-GitHub prereleases; registry versions may differ.
+These are prereleases. Follow the linked installation instructions; package
+registries may contain older versions. Release pages include checksums and
+verification results.
 
 The Go, Java, C#/.NET, Ruby, PHP, and Rust clients are generated from the API
 specification. Their API shapes differ from the maintained TypeScript and Python
@@ -35,17 +32,21 @@ clients; use each repository's own examples.
 
 ## Framework integrations
 
-LangChain and LlamaIndex adapters use the maintained Python SDK. Both
-previews retain their **proprietary license**. See each repository
-for its existing license declaration and release notes.
+Use LangChain or LlamaIndex to store and retrieve documents through the Python
+SDK. **These two adapters are proprietary.** Their READMEs cover supported
+operations, client ownership and handling partial failures.
 
-| Framework | Source | Tested GitHub preview |
+| Framework | Source | GitHub preview |
 | --- | --- | --- |
 | LangChain | [langchain-originchain](https://github.com/originchaindb/langchain-originchain) | [v0.1.0-rc.1](https://github.com/originchaindb/langchain-originchain/releases/tag/v0.1.0-rc.1) |
 | LlamaIndex | [llama-index-vector-stores-originchain](https://github.com/originchaindb/llama-index-vector-stores-originchain) | [v0.1.0-rc.1](https://github.com/originchaindb/llama-index-vector-stores-originchain/releases/tag/v0.1.0-rc.1) |
 
-Download tested wheels and verification receipts from the linked releases.
-PyPI publication remains separate.
+Install the wheels from the linked GitHub releases; these adapters are not on PyPI.
+
+## MCP server
+
+Connect an MCP host over stdio using the [OriginChainDB MCP server](https://github.com/originchaindb/mcp-server).
+Its guide covers configuration, tool inputs, permissions and current limitations.
 
 ## Get started
 
