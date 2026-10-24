@@ -13,17 +13,18 @@ instructions. TypeScript also supports JavaScript.
 
 | Language | Source repository | Tested GitHub preview |
 | --- | --- | --- |
-| TypeScript / JavaScript | [originchadb](https://github.com/originchaindb/originchadb) | [v0.7.0-rc.3](https://github.com/originchaindb/originchadb/releases/tag/v0.7.0-rc.3) |
-| Python | [originchain-python](https://github.com/originchaindb/originchain-python) | [v0.10.0-rc.2](https://github.com/originchaindb/originchain-python/releases/tag/v0.10.0-rc.2) |
-| Go | [originchaindb-go](https://github.com/originchaindb/originchaindb-go) | [v0.2.0-rc.2](https://github.com/originchaindb/originchaindb-go/releases/tag/v0.2.0-rc.2) |
-| Java | [originchaindb-java](https://github.com/originchaindb/originchaindb-java) | [v0.2.0-rc.2](https://github.com/originchaindb/originchaindb-java/releases/tag/v0.2.0-rc.2) |
-| C# / .NET | [originchaindb-csharp](https://github.com/originchaindb/originchaindb-csharp) | [v0.2.0-rc.2](https://github.com/originchaindb/originchaindb-csharp/releases/tag/v0.2.0-rc.2) |
-| Ruby | [originchaindb-ruby](https://github.com/originchaindb/originchaindb-ruby) | [v0.2.0-rc.2](https://github.com/originchaindb/originchaindb-ruby/releases/tag/v0.2.0-rc.2) |
-| PHP | [originchaindb-php](https://github.com/originchaindb/originchaindb-php) | [v0.2.0-rc.2](https://github.com/originchaindb/originchaindb-php/releases/tag/v0.2.0-rc.2) |
-| Rust | [originchaindb-rust](https://github.com/originchaindb/originchaindb-rust) | [v0.2.0-rc.2](https://github.com/originchaindb/originchaindb-rust/releases/tag/v0.2.0-rc.2) |
+| TypeScript / JavaScript | [originchadb](https://github.com/originchaindb/originchadb) | [v0.7.0-rc.4](https://github.com/originchaindb/originchadb/releases/tag/v0.7.0-rc.4) |
+| Python | [originchain-python](https://github.com/originchaindb/originchain-python) | [v0.10.0-rc.3](https://github.com/originchaindb/originchain-python/releases/tag/v0.10.0-rc.3) |
+| Go | [originchaindb-go](https://github.com/originchaindb/originchaindb-go) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-go/releases/tag/v0.3.0-rc.1) |
+| Java | [originchaindb-java](https://github.com/originchaindb/originchaindb-java) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-java/releases/tag/v0.3.0-rc.1) |
+| C# / .NET | [originchaindb-csharp](https://github.com/originchaindb/originchaindb-csharp) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-csharp/releases/tag/v0.3.0-rc.1) |
+| Ruby | [originchaindb-ruby](https://github.com/originchaindb/originchaindb-ruby) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-ruby/releases/tag/v0.3.0-rc.1) |
+| PHP | [originchaindb-php](https://github.com/originchaindb/originchaindb-php) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-php/releases/tag/v0.3.0-rc.1) |
+| Rust | [originchaindb-rust](https://github.com/originchaindb/originchaindb-rust) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-rust/releases/tag/v0.3.0-rc.1) |
 
-All eight linked previews passed installed-package live SQL, graph, vector
-and full-text acceptance, alongside build, compatibility and mock API checks.
+All eight linked previews passed installed-package live SQL, graph, vector,
+full-text search and query-metrics checks, alongside build, compatibility
+and mock API checks.
 Successful Ask execution and stable registry promotion remain separate
 requirements. Download tested assets and verification receipts from the linked
 GitHub prereleases; registry versions may differ.
