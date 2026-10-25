@@ -60,6 +60,7 @@ Install the wheels from the linked GitHub releases; these adapters are not on Py
 ## MCP server
 
 Connect an MCP host over stdio using the [OriginChainDB MCP server](https://github.com/originchaindb/mcp-server).
+The [v0.2.0-rc.1 preview](https://github.com/originchaindb/mcp-server/releases/tag/v0.2.0-rc.1) adds request deadlines, cancellation and database-user authentication.
 Its guide covers configuration, tool inputs, permissions and current limitations.
 
 ## Get started
