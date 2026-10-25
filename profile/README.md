@@ -37,6 +37,12 @@ The Go, Java, C#/.NET, Ruby, PHP, and Rust clients are generated from the API
 specification. Their API shapes differ from the maintained TypeScript and Python
 clients; use each repository's own examples.
 
+The eight maintained SDKs passed fresh installed-package checks for SQL, graph,
+vector and full-text operations against an ephemeral development engine on
+25 October 2026. This does not imply a production rollout or a new package release.
+The [support matrix](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md) lists exact tested source commits, runtime coverage and
+the limits of the additional language clients.
+
 ## Framework integrations
 
 Use LangChain or LlamaIndex to store and retrieve documents through the Python
