@@ -8,10 +8,12 @@ vector search, full-text search, graph queries, and AI applications.
 
 ## SDKs
 
-Choose a language below, then follow that repository's release installation
-instructions. TypeScript also supports JavaScript.
+The default branches contain unreleased SDK updates for SQL, full-text search,
+vector search and graph operations. Follow each repository's README for current
+source-install instructions. TypeScript also supports JavaScript. New package
+releases are paused; the preview links below refer to earlier releases.
 
-| Language | Source repository | Status |
+| Language | Source repository | Earlier GitHub preview |
 | --- | --- | --- |
 | TypeScript / JavaScript | [originchaindb](https://github.com/originchaindb/originchaindb) | [v0.7.0-rc.6](https://github.com/originchaindb/originchaindb/releases/tag/v0.7.0-rc.6) |
 | Python | [originchaindb-python](https://github.com/originchaindb/originchaindb-python) | Development source (`0.11.0.dev0`) |
@@ -22,22 +24,14 @@ instructions. TypeScript also supports JavaScript.
 | PHP | [originchaindb-php](https://github.com/originchaindb/originchaindb-php) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-php/releases/tag/v0.3.0-rc.1) |
 | Rust | [originchaindb-rust](https://github.com/originchaindb/originchaindb-rust) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-rust/releases/tag/v0.3.0-rc.1) |
 
-The linked releases are previews; their release pages include checksums and verification results.
-Python development continues in `originchaindb-python`, with SQL, full-text search,
-vector search and graph queries. Follow its README to install from source. The
-distribution and import name remain `originchain`; existing PyPI packages predate
-this replacement repository. New package releases are deferred.
+Preview release pages include archive installation instructions, checksums and
+verification results. They can differ from current development source. An
+unqualified package-manager install may select an older stable version; a GitHub
+preview does not imply publication on a language's package registry.
 
-The TypeScript preview is available as a tested GitHub archive while npm
-trusted-publisher authentication is being completed:
-
-```sh
-npm install https://github.com/originchaindb/originchaindb/releases/download/v0.7.0-rc.6/originchain-sdk-0.7.0-rc.6.tgz
-```
-
-Unqualified package installs select older stable releases. For the other languages,
-follow the linked repository's installation instructions; a GitHub preview does
-not imply publication on its language's package registry.
+Python development continues in `originchaindb-python`. Its distribution and
+import name remain `originchain`; existing PyPI packages predate the replacement
+repository. Follow the new repository's README to install from source.
 
 The Go, Java, C#/.NET, Ruby, PHP, and Rust clients are generated from the API
 specification. Their API shapes differ from the maintained TypeScript and Python
@@ -59,8 +53,10 @@ Install the wheels from the linked GitHub releases; these adapters are not on Py
 ## MCP server
 
 Connect an MCP host over stdio using the [OriginChainDB MCP server](https://github.com/originchaindb/mcp-server).
-The [v0.2.0-rc.1 preview](https://github.com/originchaindb/mcp-server/releases/tag/v0.2.0-rc.1) adds request deadlines, cancellation and database-user authentication.
-Its guide covers configuration, tool inputs, permissions and current limitations.
+The current source provides SQL, vector search, full-text search and schema
+discovery tools, with request deadlines, cancellation and database-user
+authentication. Its README covers source installation, configuration and
+permissions. The earlier [v0.2.0-rc.1 preview](https://github.com/originchaindb/mcp-server/releases/tag/v0.2.0-rc.1) remains available separately.
 
 ## Get started
 
