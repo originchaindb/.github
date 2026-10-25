@@ -11,10 +11,10 @@ vector search, full-text search, graph queries, and AI applications.
 Choose a language below, then follow that repository's release installation
 instructions. TypeScript also supports JavaScript.
 
-| Language | Source repository | GitHub preview |
+| Language | Source repository | Status |
 | --- | --- | --- |
 | TypeScript / JavaScript | [originchaindb](https://github.com/originchaindb/originchaindb) | [v0.7.0-rc.6](https://github.com/originchaindb/originchaindb/releases/tag/v0.7.0-rc.6) |
-| Python | [originchain-python](https://github.com/originchaindb/originchain-python) | [v0.10.0-rc.5](https://github.com/originchaindb/originchain-python/releases/tag/v0.10.0-rc.5) |
+| Python | [originchaindb-python](https://github.com/originchaindb/originchaindb-python) | Development source (`0.11.0.dev0`) |
 | Go | [originchaindb-go](https://github.com/originchaindb/originchaindb-go) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-go/releases/tag/v0.3.0-rc.1) |
 | Java | [originchaindb-java](https://github.com/originchaindb/originchaindb-java) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-java/releases/tag/v0.3.0-rc.1) |
 | C# / .NET | [originchaindb-csharp](https://github.com/originchaindb/originchaindb-csharp) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-csharp/releases/tag/v0.3.0-rc.1) |
@@ -22,12 +22,11 @@ instructions. TypeScript also supports JavaScript.
 | PHP | [originchaindb-php](https://github.com/originchaindb/originchaindb-php) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-php/releases/tag/v0.3.0-rc.1) |
 | Rust | [originchaindb-rust](https://github.com/originchaindb/originchaindb-rust) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-rust/releases/tag/v0.3.0-rc.1) |
 
-These are prereleases. Release pages include checksums and verification results.
-The current Python preview is available on PyPI:
-
-```sh
-python -m pip install "originchain==0.10.0rc5"
-```
+The linked releases are previews; their release pages include checksums and verification results.
+Python development continues in `originchaindb-python`, with SQL, full-text search,
+vector search and graph queries. Follow its README to install from source. The
+distribution and import name remain `originchain`; existing PyPI packages predate
+this replacement repository. New package releases are deferred.
 
 The TypeScript preview is available as a tested GitHub archive while npm
 trusted-publisher authentication is being completed:
