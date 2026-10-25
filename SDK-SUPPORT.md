@@ -60,12 +60,14 @@ is narrower than the eight maintained clients above.
 | Client | Passed checks | Still unverified |
 | --- | --- | --- |
 | Swift | HTTP fixtures on macOS and Ubuntu 24.04; iOS 26.2, tvOS 26.2 and watchOS 26.2 simulators; separate installed-consumer SQL check | Physical devices and minimum Apple OS versions |
-| Dart | HTTP fixtures on Linux, macOS and Windows; separate installed-consumer SQL check | Flutter/Android and browsers |
-| Kotlin | JVM coroutine/HTTP fixtures on Linux, macOS and Windows; separate installed-consumer SQL check | Android |
+| Dart | HTTP fixtures on Linux, macOS and Windows; nine Flutter 3.41.4 / Dart 3.11.1 integration tests on an Android 15 / API 35 AOSP ATD x86_64 emulator; separate installed-consumer SQL check | Browsers, physical Android devices, other Android versions and minimum Android version compatibility |
+| Kotlin | JVM coroutine/HTTP fixtures on Linux, macOS and Windows; seven instrumented tests on an Android 15 / API 35 AOSP ATD x86_64 emulator; separate installed-consumer SQL check | Physical Android devices, other Android versions and minimum Android version compatibility |
 
-A simulator or desktop fixture is not a database acceptance run. A single SQL
-consumer check does not certify graph, vector or full-text behavior on all these
-platforms. Public installation and distribution checks are also pending.
+The Android tests use a software emulator and a local HTTP fixture; they do
+not test a deployed database or physical device. The same distinction applies
+to the Apple simulator and desktop fixtures. A separate SQL consumer check does
+not certify graph, vector or full-text behavior on all these platforms. Public
+installation and distribution checks remain pending.
 
 ## Frameworks and MCP
 
