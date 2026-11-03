@@ -1,73 +1,87 @@
 # OriginChainDB
 
-Official SDKs and developer tools for **OriginChainDB**: a database for SQL,
-vector search, full-text search, graph queries, and AI applications.
+**SQL, vector search, full-text search, and graph relationships in one database.**
 
-[Website](https://originchaindb.com/) · [Documentation](https://originchaindb.com/docs/) ·
-[SDK guide](https://originchaindb.com/docs/sdk/)
+Build with the official OriginChainDB SDKs. Each SDK follows its language's
+conventions and shares the same core operations, connection settings, and
+examples.
 
-## SDKs
+[Website](https://originchaindb.com/) | [Documentation](https://originchaindb.com/docs/) | [SDK support](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md)
 
-The default branches contain unreleased SDK updates for SQL, full-text search,
-vector search and graph operations. Follow each repository's README for current
-source-install instructions. TypeScript also supports JavaScript. New package
-releases are paused; the preview links below refer to earlier releases.
+## Choose your SDK
 
-| Language | Source repository | Earlier GitHub preview |
+Every README includes installation, a first query, error handling, and a complete
+product catalog example covering SQL, rows, vectors, full-text search, and graph
+relationships.
+
+| Language | Installation and guide | Runnable catalog |
 | --- | --- | --- |
-| TypeScript / JavaScript | [originchaindb](https://github.com/originchaindb/originchaindb) | [v0.7.0-rc.6](https://github.com/originchaindb/originchaindb/releases/tag/v0.7.0-rc.6) |
-| Python | [originchaindb-python](https://github.com/originchaindb/originchaindb-python) | Development source (`0.11.0.dev0`) |
-| Go | [originchaindb-go](https://github.com/originchaindb/originchaindb-go) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-go/releases/tag/v0.3.0-rc.1) |
-| Java | [originchaindb-java](https://github.com/originchaindb/originchaindb-java) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-java/releases/tag/v0.3.0-rc.1) |
-| C# / .NET | [originchaindb-csharp](https://github.com/originchaindb/originchaindb-csharp) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-csharp/releases/tag/v0.3.0-rc.1) |
-| Ruby | [originchaindb-ruby](https://github.com/originchaindb/originchaindb-ruby) | [v0.4.0-rc.1](https://github.com/originchaindb/originchaindb-ruby/releases/tag/v0.4.0-rc.1) |
-| PHP | [originchaindb-php](https://github.com/originchaindb/originchaindb-php) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-php/releases/tag/v0.3.0-rc.1) |
-| Rust | [originchaindb-rust](https://github.com/originchaindb/originchaindb-rust) | [v0.3.0-rc.1](https://github.com/originchaindb/originchaindb-rust/releases/tag/v0.3.0-rc.1) |
+| Python | [Python SDK](https://github.com/originchaindb/originchaindb-python#installation) | [catalog.py](https://github.com/originchaindb/originchaindb-python/blob/main/examples/catalog.py) |
+| TypeScript / JavaScript | [TypeScript SDK](https://github.com/originchaindb/originchaindb#installation) | [catalog.mjs](https://github.com/originchaindb/originchaindb/blob/main/examples/catalog.mjs) |
+| Go | [Go SDK](https://github.com/originchaindb/originchaindb-go#installation) | [main.go](https://github.com/originchaindb/originchaindb-go/blob/main/examples/catalog/main.go) |
+| Rust | [Rust SDK](https://github.com/originchaindb/originchaindb-rust#installation) | [catalog.rs](https://github.com/originchaindb/originchaindb-rust/blob/main/examples/catalog.rs) |
+| Java | [Java SDK](https://github.com/originchaindb/originchaindb-java#installation) | [Catalog.java](https://github.com/originchaindb/originchaindb-java/blob/main/examples/Catalog.java) |
+| C# / .NET | [.NET SDK](https://github.com/originchaindb/originchaindb-csharp#installation) | [Program.cs](https://github.com/originchaindb/originchaindb-csharp/blob/main/examples/Catalog/Program.cs) |
+| PHP | [PHP SDK](https://github.com/originchaindb/originchaindb-php#installation) | [catalog.php](https://github.com/originchaindb/originchaindb-php/blob/main/examples/catalog.php) |
+| Ruby | [Ruby SDK](https://github.com/originchaindb/originchaindb-ruby#installation) | [catalog.rb](https://github.com/originchaindb/originchaindb-ruby/blob/main/examples/catalog.rb) |
 
-Preview release pages include archive installation instructions, checksums and
-verification results. They can differ from current development source. An
-unqualified package-manager install may select an older stable version; a GitHub
-preview does not imply publication on a language's package registry.
+**Current source: 1.0 release candidates.** Install from source using your SDK's
+README. These candidates have not been published to package registries; existing
+registry packages can have a different API. Exact versions, verified commits,
+and CI results are in the [support matrix](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md).
 
-Python development continues in `originchaindb-python`. Its distribution and
-import name remain `originchain`; existing PyPI packages predate the replacement
-repository. Follow the new repository's README to install from source.
+## Connect and run a query
 
-The Go, Java, C#/.NET, Ruby, PHP, and Rust clients are generated from the API
-specification. Their API shapes differ from the maintained TypeScript and Python
-clients; use each repository's own examples.
+1. Install the SDK for your language using its guide above.
+2. Copy the complete HTTPS database address from **Connect** into `OC_URL` and
+   your database access token into `OC_TOKEN`. Use the address exactly as supplied.
+3. Run the first-query example in your SDK's README.
 
-The eight maintained SDKs passed fresh installed-package checks for SQL, graph,
-vector and full-text operations against an ephemeral development engine on
-25 October 2026. This does not imply a production rollout or a new package release.
-The [support matrix](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md) lists exact tested source commits, runtime coverage and
-the limits of the additional language clients.
+For example, after installing the Python SDK and setting those environment variables:
 
-## Framework integrations
+```python
+from originchain import Client
 
-Use LangChain or LlamaIndex to store and retrieve documents through the Python
-SDK. **These two adapters are proprietary.** Their READMEs cover supported
-operations, client ownership and handling partial failures.
+with Client.from_env() as db:
+    result = db.sql.run("SELECT $1 AS value", [7])
+    print(result.rows)
+```
 
-| Framework | Source | GitHub preview |
+This query needs no tables and returns a row with `value` equal to `7`.
+Keep credentials in environment variables or your application's secret manager.
+
+## Explore the examples
+
+The catalog examples use the same small dataset and schema in all eight
+languages. They create data, so run them against a development database with
+permission to register schemas and read/write the example data.
+
+| Operation | What the example demonstrates | Walkthrough |
 | --- | --- | --- |
-| LangChain | [langchain-originchain](https://github.com/originchaindb/langchain-originchain) | [v0.1.0-rc.1](https://github.com/originchaindb/langchain-originchain/releases/tag/v0.1.0-rc.1) |
-| LlamaIndex | [llama-index-vector-stores-originchain](https://github.com/originchaindb/llama-index-vector-stores-originchain) | [v0.1.0-rc.1](https://github.com/originchaindb/llama-index-vector-stores-originchain/releases/tag/v0.1.0-rc.1) |
+| SQL | Bind parameters and read query results | [SQL example](https://github.com/originchaindb/originchaindb-python#query-with-sql) |
+| Vector search | Store an embedding and find similar records | [Vector example](https://github.com/originchaindb/originchaindb-python#search-by-vector-similarity) |
+| Full-text search | Index product descriptions and retrieve BM25 matches | [FTS example](https://github.com/originchaindb/originchaindb-python#search-text) |
+| Graph relationships | Define a relation and traverse neighboring products | [Graph example](https://github.com/originchaindb/originchaindb-python#follow-graph-relationships) |
 
-Install the wheels from the linked GitHub releases; these adapters are not on PyPI.
+These walkthrough links use Python; the SDK guides above contain the equivalent
+examples in every language, including schema setup and expected result fields.
 
-## MCP server
+## Integrations and tools
 
-Connect an MCP host over stdio using the [OriginChainDB MCP server](https://github.com/originchaindb/mcp-server).
-The current source provides SQL, vector search, full-text search and schema
-discovery tools, with request deadlines, cancellation and database-user
-authentication. Its README covers source installation, configuration and
-permissions. The earlier [v0.2.0-rc.1 preview](https://github.com/originchaindb/mcp-server/releases/tag/v0.2.0-rc.1) remains available separately.
+| Integration | Repository |
+| --- | --- |
+| LangChain vector store | [langchain-originchain](https://github.com/originchaindb/langchain-originchain) |
+| LlamaIndex vector store | [llama-index-vector-stores-originchain](https://github.com/originchaindb/llama-index-vector-stores-originchain) |
+| MCP server for SQL, vector search, full-text search, and schema discovery | [mcp-server](https://github.com/originchaindb/mcp-server) |
 
-## Get started
+These projects have separate installation and compatibility requirements. The
+LangChain and LlamaIndex adapters use an earlier Python SDK source pin and have
+proprietary licenses. Their compatibility with the 1.0 candidates has not yet
+been verified. See each repository's README and license before integrating.
 
-1. Read the [quickstart](https://originchaindb.com/docs/quickstart/).
-2. Choose an SDK and follow its repository's installation instructions.
-3. Use your tenant endpoint and keep database credentials in your secret store.
-4. Report SDK problems in the corresponding repository's Issues tab, including
-   the SDK version and a minimal reproduction without credentials.
+## Support and contributions
+
+Use the relevant SDK repository's Issues tab for bugs and feature requests.
+Include the SDK version, runtime, and a minimal reproduction with credentials
+removed. Each repository includes contribution instructions, a changelog,
+and a security policy for reporting vulnerabilities.

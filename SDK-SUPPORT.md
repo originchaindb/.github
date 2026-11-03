@@ -1,95 +1,103 @@
 # OriginChainDB SDK support
 
-Updated 26 October 2026. Use each repository's README for installation and a
-working first query. Repository names and package names are intentionally listed
-separately: TypeScript uses the `originchaindb` repository and `@originchain/sdk`
-package; Python uses `originchaindb-python` and imports `originchain`.
+Updated **4 November 2026**. This matrix covers the eight public SDK source
+candidates below. Use each repository's README for installation, connection
+settings, runnable examples, and language-specific behavior.
 
-## Maintained language clients
+## Source versions and verification
 
-The source versions below are unreleased. All eight passed fresh installed-
-package checks for SQL, graph, vector and full-text operations on 25 October
-against the same ephemeral development engine. Each repository's
-`validation/DEVELOPMENT.md` records the scope and exact public runtime commit.
-This establishes development-candidate behavior, not deployment to your database.
+Package publication is paused. These versions describe source candidates;
+they do not indicate that a matching package is available on a registry.
+Use the README's source-install instructions and pin a reviewed commit.
 
-| Language | Repository | Package / module | Development version | Tested runtime source |
+| Language | Package or module | Source version | Verified source | CI |
 | --- | --- | --- | --- | --- |
-| TypeScript / JavaScript | [originchaindb](https://github.com/originchaindb/originchaindb) | `@originchain/sdk` | `0.8.0-rc.1` | [`d870b52527a2`](https://github.com/originchaindb/originchaindb/tree/d870b52527a252c9c96339100af5ddeeebaccbd8) |
-| Python | [originchaindb-python](https://github.com/originchaindb/originchaindb-python) | `originchain` | `0.11.0.dev0` | [`944cd410ffb1`](https://github.com/originchaindb/originchaindb-python/tree/944cd410ffb11110c00ce925c0c609e11862916b) |
-| Go | [originchaindb-go](https://github.com/originchaindb/originchaindb-go) | `github.com/originchaindb/originchaindb-go` | `0.5.0-rc.1` | [`d7b6c85832f2`](https://github.com/originchaindb/originchaindb-go/tree/d7b6c85832f2f85c25a2db94d59eb5e660e6d4d2) |
-| Java | [originchaindb-java](https://github.com/originchaindb/originchaindb-java) | `ai.originchain:originchaindb` | `0.5.0-rc.1` | [`f8b3e6e9f7b5`](https://github.com/originchaindb/originchaindb-java/tree/f8b3e6e9f7b549809c47c0ce8b6b36113e963e6b) |
-| C# / .NET | [originchaindb-csharp](https://github.com/originchaindb/originchaindb-csharp) | `OriginChainDB` | `0.5.0-rc.1` | [`be39aae12ae2`](https://github.com/originchaindb/originchaindb-csharp/tree/be39aae12ae2124bdffdc6383d3b386fefaba251) |
-| Ruby | [originchaindb-ruby](https://github.com/originchaindb/originchaindb-ruby) | `originchaindb` | `0.5.0.pre.rc.1` | [`d3e4c1b0b0c8`](https://github.com/originchaindb/originchaindb-ruby/tree/d3e4c1b0b0c871db25c3e5afc64ca56fd13bb5b4) |
-| PHP | [originchaindb-php](https://github.com/originchaindb/originchaindb-php) | `originchain/originchaindb` | `development branch` | [`f3c6721d5b41`](https://github.com/originchaindb/originchaindb-php/tree/f3c6721d5b419385f56c053de8aea3e88046d9a3) |
-| Rust | [originchaindb-rust](https://github.com/originchaindb/originchaindb-rust) | `originchaindb` | `0.5.0-rc.1` | [`a8488593201b`](https://github.com/originchaindb/originchaindb-rust/tree/a8488593201baedb382f78bbfe8b5d13fdf49e8d) |
+| Python | `originchain` | `1.0.0rc1` | [`194088399f27`](https://github.com/originchaindb/originchaindb-python/tree/194088399f277fa105fd9691c8d9b3637eec3c4b) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41737112031) |
+| TypeScript / JavaScript | `@originchain/sdk` | `1.0.0-rc.1` | [`a884c3a24eea`](https://github.com/originchaindb/originchaindb/tree/a884c3a24eeaf91b5311fbcfc2c60adfa066ac94) | [Passed](https://github.com/originchaindb/originchaindb/actions/runs/41737131569) |
+| Go | `github.com/originchaindb/originchaindb-go` | `1.0.0-rc.1` source candidate | [`494448f8fbbb`](https://github.com/originchaindb/originchaindb-go/tree/494448f8fbbbf637fcee4f92b4e0fd740e7f48ef) | [Passed](https://github.com/originchaindb/originchaindb-go/actions/runs/41737146352) |
+| Rust | `originchaindb` | `1.0.0-rc.1` | [`1060394037ef`](https://github.com/originchaindb/originchaindb-rust/tree/1060394037ef631833f709c4bd432af088027d3d) | [Passed](https://github.com/originchaindb/originchaindb-rust/actions/runs/41737166332) |
+| Java | `ai.originchain:originchaindb` | `1.0.0-rc.1` | [`f3eb55fe3745`](https://github.com/originchaindb/originchaindb-java/tree/f3eb55fe3745a1f245a5c3b3918788d4bc55fe03) | [Passed](https://github.com/originchaindb/originchaindb-java/actions/runs/41737182682) |
+| C# / .NET | `OriginChainDB` | `1.0.0-rc.1` | [`1b49700f6496`](https://github.com/originchaindb/originchaindb-csharp/tree/1b49700f64969fcac9fe8117e4008f059ee263d6) | [Passed](https://github.com/originchaindb/originchaindb-csharp/actions/runs/41737197849) |
+| PHP | `originchain/originchaindb` | Composer development branch | [`0a502d297c6d`](https://github.com/originchaindb/originchaindb-php/tree/0a502d297c6d797055ea8213a07ff5d09d330b85) | [Passed](https://github.com/originchaindb/originchaindb-php/actions/runs/41737214570) |
+| Ruby | `originchaindb` | `1.0.0.rc.1` | [`17cb1d36498e`](https://github.com/originchaindb/originchaindb-ruby/tree/17cb1d36498e38bdbfd9176b440ea68c1342919d) | [Passed](https://github.com/originchaindb/originchaindb-ruby/actions/runs/41737232155) |
 
-Ruby's gem uses the normalized version `0.5.0.pre.rc.1`. PHP uses its Composer
-development branch rather than an unpublished version tag. Earlier GitHub
-previews remain separate from these source versions. Releases and registry
-publication are paused; an unqualified package-manager install can select an
-older package.
+Python's import remains `originchain`; the TypeScript SDK also supports
+JavaScript. Ruby uses the normalized gem version shown above. PHP has no
+published candidate tag. Go's candidate label is not a published module tag;
+use the commit-based installation in its README.
 
-## Runtime checks
+## Runtime coverage
 
-These are passing checks on the source snapshots above. They do not establish
-support on untested runtimes or for every operation.
+All **30 CI jobs** linked above passed. This table lists tested configurations,
+not an assertion that every other runtime or operating system is supported.
+The `stable` entries refer to the toolchain resolved by the linked CI run.
 
-| Client | Verified runtime checks | Platform scope |
+| SDK | Runtime checks | Operating systems |
 | --- | --- | --- |
-| TypeScript / JavaScript | Node 18, 22, 24; Chromium, Firefox, WebKit request tests | Node: Linux, plus Node 22 on Windows/macOS; browser/worker fixtures do not grant safe use of embedded database credentials |
-| Python | Python 3.9, 3.12, 3.14 | Linux, plus Python 3.12 on Windows/macOS |
-| Go | Go 1.23 and 1.26 | Ubuntu 24.04, macOS 14 |
-| Java | Temurin 17 and 21 | Ubuntu 24.04, macOS 14 |
-| C# / .NET | .NET 8 | Ubuntu 24.04, macOS 14 |
-| Ruby | Ruby 3.2, 3.3, 3.4 | Ubuntu 24.04, macOS 14 |
-| PHP | PHP 8.2, 8.3, 8.4 | Ubuntu 24.04, macOS 14 |
-| Rust | Stable compiler recorded by CI; native-tls and rustls | Ubuntu 24.04, macOS 14; no explicit minimum Rust compiler certified |
+| Python | Python 3.10, 3.12, 3.14 | Linux; Windows and macOS on 3.12 |
+| TypeScript / JavaScript | Installed HTTP consumer on Node 18, 22, 24; build and unit tests on Node 24; Chromium, Firefox, WebKit page and worker tests | Linux; Node 22 consumers on Windows and macOS; browsers on Linux |
+| Go | Go 1.23 and stable | Linux; stable on Windows and macOS |
+| Rust | Rust 1.88.0 and stable, with rustls | Linux; stable on Windows |
+| Java | Temurin 17, 21, 25 | Linux |
+| C# / .NET | .NET 8 | Linux and Windows |
+| PHP | PHP 8.2, 8.4 | Linux |
+| Ruby | Ruby 3.2, 3.4, 4.0 | Linux on 3.2/3.4; Windows on 4.0 |
 
-The installed-package engine checks cover bound SQL parameters, graph traversal,
-vector search, boolean/BM25/highlight full-text responses, diagnostics and query
-metrics with null idle latency. Build and fixture checks have broader runtime
-coverage than live-operation checks. Server feature gates and permissions apply;
-generated methods do not establish availability of every administrative API.
+Browser tests verify the transport and package. Applications still need an
+appropriate credential delivery model and server CORS configuration; do not
+embed privileged database credentials in frontend bundles.
 
-## Additional clients in development
+## Shared behavior and live examples
 
-Swift, Dart and Kotlin are not public package releases. Their current evidence
-is narrower than the eight maintained clients above.
+The SDKs are maintained implementations with native language conventions.
+Their common core covers SQL, schemas and rows, vector operations, full-text
+indexing/search, graph queries/traversal, and usage/query metrics. Python and
+TypeScript also have additional helpers outside this common core.
 
-| Client | Passed checks | Still unverified |
+All eight SDKs passed the same **24-request HTTP contract**, covering request
+shapes, response handling, precision, partial batch failures, authentication
+errors, server errors, and redirect refusal. Each repository includes the
+contract fixture and CI consumer.
+
+All eight runnable catalog programs were also built or syntax-checked and
+executed against an isolated integration database. They passed:
+
+- Schema registration and row writes/read.
+- SQL with bound parameters.
+- Vector insertion and similarity search.
+- Explicit full-text indexing and BM25 search.
+- Graph neighbor traversal using the declared relation.
+
+The [organization page](https://github.com/originchaindb) links to every catalog
+program. Each SDK README explains the setup, result fields, and example commands.
+The examples write data and require the corresponding database permissions.
+
+## Compatibility boundaries
+
+- Set `OC_URL` to the complete database address from **Connect**, and `OC_TOKEN`
+  to the database access token. The SDK does not infer a tenant path.
+- HTTPS is required except for loopback development. The default request timeout
+  is 60 seconds; Ruby uses network inactivity timeouts. Redirects are refused,
+  and automatic SDK retries are disabled by default.
+- SQL results retain the server's value representation. Use the result and
+  precision guidance in your language's README when mapping values into models.
+- Cancellation, concurrency, and client lifetime follow native runtime behavior.
+  Ruby and PHP clients are intended for sequential use per client instance.
+- Live examples used an existing integration credential. Activation, expiry,
+  rotation, and revocation of the new token lifecycle are not certified by these
+  checks.
+- Live checks establish behavior on the integration database used for this run.
+  They do not establish a supported server-version range or a production rollout.
+  Availability still depends on server features and token permissions.
+
+## Framework integrations and MCP
+
+| Project | Scope | Compatibility status |
 | --- | --- | --- |
-| Swift | HTTP fixtures on macOS and Ubuntu 24.04; iOS 26.2, tvOS 26.2 and watchOS 26.2 simulators; separate installed-consumer SQL check | Physical devices and minimum Apple OS versions |
-| Dart | HTTP fixtures on Linux, macOS and Windows; nine Flutter 3.41.4 / Dart 3.11.1 integration tests on an Android 15 / API 35 AOSP ATD x86_64 emulator; separate installed-consumer SQL check | Browsers, physical Android devices, other Android versions and minimum Android version compatibility |
-| Kotlin | JVM coroutine/HTTP fixtures on Linux, macOS and Windows; seven instrumented tests on an Android 15 / API 35 AOSP ATD x86_64 emulator; separate installed-consumer SQL check | Physical Android devices, other Android versions and minimum Android version compatibility |
+| [LangChain](https://github.com/originchaindb/langchain-originchain) | Python vector-store adapter | Earlier Python SDK source pin; compatibility with the 1.0 candidate has not been verified; proprietary license |
+| [LlamaIndex](https://github.com/originchaindb/llama-index-vector-stores-originchain) | Python vector-store adapter | Earlier Python SDK source pin; compatibility with the 1.0 candidate has not been verified; proprietary license |
+| [MCP server](https://github.com/originchaindb/mcp-server) | SQL, vector search, full-text search, and schema discovery over stdio; Node 20+ | Separate project and verification; not included in the eight-SDK checks above; MIT license |
 
-The Android tests use a software emulator and a local HTTP fixture; they do
-not test a deployed database or physical device. The same distinction applies
-to the Apple simulator and desktop fixtures. A separate SQL consumer check does
-not certify graph, vector or full-text behavior on all these platforms. Public
-installation and distribution checks remain pending.
-
-## Frameworks and MCP
-
-| Library | Available scope | Distribution |
-| --- | --- | --- |
-| [LangChain](https://github.com/originchaindb/langchain-originchain) | Vector-store add, search, filtering and deletion; see README for transaction and MMR limits | Existing `0.1.0rc1` GitHub preview, proprietary license; not on PyPI |
-| [LlamaIndex](https://github.com/originchaindb/llama-index-vector-stores-originchain) | Node storage, search, metadata filters and source-document deletion | Existing `0.1.0rc1` GitHub preview, proprietary license; not on PyPI |
-| [MCP server](https://github.com/originchaindb/mcp-server) | SQL, vector search, full-text search and schema discovery over stdio; Node 20+ | `0.3.0-rc.1` development source; earlier `0.2.0-rc.1` GitHub preview |
-
-The adapters' existing release verification remains attached to their release
-pages. Their current README installs the maintained Python development source;
-that change does not republish the adapters or establish a new live release
-acceptance result. MCP has no dedicated graph tool.
-
-## Data types and server versions
-
-SDKs preserve the server's SQL value representation and optional output type
-metadata. The development-engine tests include floating-point special values:
-TypeScript keeps exact strings; Python converts them only when the SQL type
-explicitly identifies a floating-point column. Ordinary text is unchanged.
-
-These backend changes have not been deployed by the SDK verification work.
-Stored microsecond timestamps, calendar intervals, protocol compatibility and
-recovery remain under development; new storage formats stay disabled. Do not
-infer a rollout or enable a format from a client version or generated method.
+Follow each integration's own README for installation, permissions, and
+limitations. This matrix does not certify additional language clients or mobile
+platforms outside the configurations listed above.
