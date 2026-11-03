@@ -14,16 +14,16 @@ Every README includes installation, a first query, error handling, and a complet
 product catalog example covering SQL, rows, vectors, full-text search, and graph
 relationships.
 
-| Language | Installation and guide | Runnable catalog |
-| --- | --- | --- |
-| Python | [Python SDK](https://github.com/originchaindb/originchaindb-python#installation) | [catalog.py](https://github.com/originchaindb/originchaindb-python/blob/main/examples/catalog.py) |
-| TypeScript / JavaScript | [TypeScript SDK](https://github.com/originchaindb/originchaindb#installation) | [catalog.mjs](https://github.com/originchaindb/originchaindb/blob/main/examples/catalog.mjs) |
-| Go | [Go SDK](https://github.com/originchaindb/originchaindb-go#installation) | [main.go](https://github.com/originchaindb/originchaindb-go/blob/main/examples/catalog/main.go) |
-| Rust | [Rust SDK](https://github.com/originchaindb/originchaindb-rust#installation) | [catalog.rs](https://github.com/originchaindb/originchaindb-rust/blob/main/examples/catalog.rs) |
-| Java | [Java SDK](https://github.com/originchaindb/originchaindb-java#installation) | [Catalog.java](https://github.com/originchaindb/originchaindb-java/blob/main/examples/Catalog.java) |
-| C# / .NET | [.NET SDK](https://github.com/originchaindb/originchaindb-csharp#installation) | [Program.cs](https://github.com/originchaindb/originchaindb-csharp/blob/main/examples/Catalog/Program.cs) |
-| PHP | [PHP SDK](https://github.com/originchaindb/originchaindb-php#installation) | [catalog.php](https://github.com/originchaindb/originchaindb-php/blob/main/examples/catalog.php) |
-| Ruby | [Ruby SDK](https://github.com/originchaindb/originchaindb-ruby#installation) | [catalog.rb](https://github.com/originchaindb/originchaindb-ruby/blob/main/examples/catalog.rb) |
+| Language | Installation and guide |
+| --- | --- |
+| Python | [Python SDK](https://github.com/originchaindb/originchaindb-python#installation) |
+| TypeScript / JavaScript | [TypeScript SDK](https://github.com/originchaindb/originchaindb#installation) |
+| Go | [Go SDK](https://github.com/originchaindb/originchaindb-go#installation) |
+| Rust | [Rust SDK](https://github.com/originchaindb/originchaindb-rust#installation) |
+| Java | [Java SDK](https://github.com/originchaindb/originchaindb-java#installation) |
+| C# / .NET | [.NET SDK](https://github.com/originchaindb/originchaindb-csharp#installation) |
+| PHP | [PHP SDK](https://github.com/originchaindb/originchaindb-php#installation) |
+| Ruby | [Ruby SDK](https://github.com/originchaindb/originchaindb-ruby#installation) |
 
 **Current source: 1.0 release candidates.** Install from source using your SDK's
 README. These candidates have not been published to package registries; existing

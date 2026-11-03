@@ -68,8 +68,8 @@ executed against an isolated integration database. They passed:
 - Explicit full-text indexing and BM25 search.
 - Graph neighbor traversal using the declared relation.
 
-The [organization page](https://github.com/originchaindb) links to every catalog
-program. Each SDK README explains the setup, result fields, and example commands.
+Each SDK README links to its complete example program and explains the setup,
+result fields, and example commands.
 The examples write data and require the corresponding database permissions.
 
 ## Compatibility boundaries
