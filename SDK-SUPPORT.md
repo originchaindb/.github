@@ -10,6 +10,9 @@ Package publication is paused. These versions describe source candidates;
 they do not indicate that a matching package is available on a registry.
 Use the README's source-install instructions and pin a reviewed commit.
 
+Maintainers: follow the [SDK publishing guide](SDK-PUBLISHING.md) for registry
+setup, verified artifacts, release commands and post-publication checks.
+
 | Language | Package or module | Source version | Verified source | CI |
 | --- | --- | --- | --- | --- |
 | Python | `originchain` | `1.0.0rc1` | [`bd50928dc938`](https://github.com/originchaindb/originchaindb-python/tree/bd50928dc9382889ab5c541ecdb99335fb6f4728) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41867600397) |
