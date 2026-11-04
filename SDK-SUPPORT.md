@@ -219,9 +219,9 @@ Maximum sampled client-container memory was **1.55 GiB**. These samples
 include runtime overhead, allocator retention, and container cache; they are not
 a comparison of language memory efficiency.
 
-Two earlier Windows runs also completed the million-row dataset stages. Their
-sustained attempts and later tunneled attempts encountered transport timeouts;
-an earlier response failure remains unclassified. Those failures are retained
+Two earlier Windows runs also completed the million-row dataset stages. Across
+the Windows and tunneled attempts, transport timeouts and client-pool drops
+occurred; one response failure remains unclassified. Those failures are retained
 in the qualification records with their causes unassigned. A small-data
 50-request/s attempt completed 920 of 1,000 scheduled requests, with 80 client-pool
 drops, and failed its offered-load target.
