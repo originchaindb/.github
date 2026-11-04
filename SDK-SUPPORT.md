@@ -12,14 +12,14 @@ Use the README's source-install instructions and pin a reviewed commit.
 
 | Language | Package or module | Source version | Verified source | CI |
 | --- | --- | --- | --- | --- |
-| Python | `originchain` | `1.0.0rc1` | [`b0e644b55511`](https://github.com/originchaindb/originchaindb-python/tree/b0e644b555119f9467e5e548d752270c04052d57) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41796179273) |
-| TypeScript / JavaScript | `@originchain/sdk` | `1.0.0-rc.1` | [`fa24bedd87ba`](https://github.com/originchaindb/originchaindb/tree/fa24bedd87ba2b9a5ab24ef1ae7bcec27191ae42) | [Passed](https://github.com/originchaindb/originchaindb/actions/runs/41796190525) |
-| Go | `github.com/originchaindb/originchaindb-go` | `1.0.0-rc.1` source candidate | [`5ae56598f153`](https://github.com/originchaindb/originchaindb-go/tree/5ae56598f153bf6da6d2d1020653ea6bbb976b1f) | [Passed](https://github.com/originchaindb/originchaindb-go/actions/runs/41796201205) |
-| Rust | `originchaindb` | `1.0.0-rc.1` | [`1f3abb90c208`](https://github.com/originchaindb/originchaindb-rust/tree/1f3abb90c208d56da19ef56207bf909ec5bcf2f6) | [Passed](https://github.com/originchaindb/originchaindb-rust/actions/runs/41796218898) |
-| Java | `ai.originchain:originchaindb` | `1.0.0-rc.1` | [`1d8843c20d1d`](https://github.com/originchaindb/originchaindb-java/tree/1d8843c20d1db067fb487427fd42089315814bcc) | [Passed](https://github.com/originchaindb/originchaindb-java/actions/runs/41800277474) |
-| C# / .NET | `OriginChainDB` | `1.0.0-rc.1` | [`481effed22ec`](https://github.com/originchaindb/originchaindb-csharp/tree/481effed22eca2395cc213e8b332282c3a7f7705) | [Passed](https://github.com/originchaindb/originchaindb-csharp/actions/runs/41796246351) |
-| PHP | `originchain/originchaindb` | Composer development branch | [`ae503a05bff4`](https://github.com/originchaindb/originchaindb-php/tree/ae503a05bff4ce61ba732f537903a5f8b14cd4e8) | [Passed](https://github.com/originchaindb/originchaindb-php/actions/runs/41796257197) |
-| Ruby | `originchaindb` | `1.0.0.rc.1` | [`5340046cfe5f`](https://github.com/originchaindb/originchaindb-ruby/tree/5340046cfe5f58eb0aabc152960fc76bf5e0a45f) | [Passed](https://github.com/originchaindb/originchaindb-ruby/actions/runs/41796273383) |
+| Python | `originchain` | `1.0.0rc1` | [`bd50928dc938`](https://github.com/originchaindb/originchaindb-python/tree/bd50928dc9382889ab5c541ecdb99335fb6f4728) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41867600397) |
+| TypeScript / JavaScript | `@originchain/sdk` | `1.0.0-rc.1` | [`909a992c4d44`](https://github.com/originchaindb/originchaindb/tree/909a992c4d44af447754710c2920f154ecbda276) | [Passed](https://github.com/originchaindb/originchaindb/actions/runs/41823527178) |
+| Go | `github.com/originchaindb/originchaindb-go` | `1.0.0-rc.1` source candidate | [`198c066dab66`](https://github.com/originchaindb/originchaindb-go/tree/198c066dab6678a65102a0f43640c52d860b4f5f) | [Passed](https://github.com/originchaindb/originchaindb-go/actions/runs/41823553618) |
+| Rust | `originchaindb` | `1.0.0-rc.1` | [`96132665a0ea`](https://github.com/originchaindb/originchaindb-rust/tree/96132665a0ea8822de8bf7b2ffd2bf3c8ed0d292) | [Passed](https://github.com/originchaindb/originchaindb-rust/actions/runs/41823577397) |
+| Java | `ai.originchain:originchaindb` | `1.0.0-rc.1` | [`475ded0442d1`](https://github.com/originchaindb/originchaindb-java/tree/475ded0442d1eb098c9aa338accda5554a69a955) | [Passed](https://github.com/originchaindb/originchaindb-java/actions/runs/41823605284) |
+| C# / .NET | `OriginChainDB` | `1.0.0-rc.1` | [`45822b1d0954`](https://github.com/originchaindb/originchaindb-csharp/tree/45822b1d0954ad48a9a281ed51d24d63286f6616) | [Passed](https://github.com/originchaindb/originchaindb-csharp/actions/runs/41823633292) |
+| PHP | `originchain/originchaindb` | Composer development branch | [`c1f568c25579`](https://github.com/originchaindb/originchaindb-php/tree/c1f568c25579d3fbabf297915d38f1a04b6315e1) | [Passed](https://github.com/originchaindb/originchaindb-php/actions/runs/41823661519) |
+| Ruby | `originchaindb` | `1.0.0.rc.1` | [`6a99f36dda52`](https://github.com/originchaindb/originchaindb-ruby/tree/6a99f36dda5285924d5862fdda3c22d230b4f1db) | [Passed](https://github.com/originchaindb/originchaindb-ruby/actions/runs/41823678751) |
 
 Python's import remains `originchain`; the TypeScript SDK also supports
 JavaScript. Ruby uses the normalized gem version shown above. PHP has no
@@ -28,7 +28,7 @@ use the commit-based installation in its README.
 
 ## Runtime coverage
 
-All **46 CI jobs** linked above passed. This table lists tested configurations,
+The CI workflows linked above passed. This table lists tested configurations,
 not an assertion that every other runtime or operating system is supported.
 The `stable` entries refer to the toolchain resolved by the linked CI run.
 
@@ -201,6 +201,7 @@ with four sequential client processes per SDK. Java used a 128 MiB maximum heap
 per process. The serving database process, binary digest, and restart count
 remained unchanged.
 
+The following latency figures are from the original qualification run.
 Observed native-call latency includes the SDK and network path; it excludes
 the workload scheduler's queue and process IPC:
 
@@ -230,6 +231,53 @@ This is a bounded integration result at the stated workload and client location.
 It does not establish server saturation capacity, a production latency objective,
 or resolution of the earlier Windows-path failures. Package publication remains
 paused.
+
+## Repeatable qualification workflow
+
+Maintainers can now repeat the full eight-SDK qualification through one command
+on the existing private build pool. A successful follow-up on 4 November 2026
+used the exact public source commits listed above and passed:
+
+- **64 live token and scoped policy checks**, including rotation, confirmed
+  revocation and removal of the temporary identities and policies.
+- **120 compatibility checks** across the three pinned engine artifacts, plus
+  both isolated manual-recovery scenarios described above.
+- **1,000,000 exact dataset rows** and **14,400 of 14,400 soak requests** over
+  ten minutes at 24 requests/s, with zero errors or client-pool drops. All
+  720 soak writes matched their stored ledgers; both warm-ups also passed.
+
+The job retained its two-CPU / 4-GiB limit; maximum sampled client memory was
+**2.14 GiB**. All sixteen workload tables and the token fixtures were removed.
+The serving database's process identity, binary digest and restart count stayed
+unchanged. Failed trials are retained separately and are not counted as passes.
+
+The workflow binds its receipt to the SDK commits, engine artifact digests,
+runtime versions and evidence hashes. Incomplete coverage, mismatched pins,
+unconfirmed revocation, dropped requests and failed cleanup block qualification.
+Credentials use a one-use encrypted handoff and are excluded from retained
+reports. The operator also checks the serving process before and after the run.
+
+This workflow does **not** publish packages. Publication remains paused, and
+broader production readiness still requires the engine security fixes to be
+verified on an approved deployed build. The scoped policy tests above do not
+replace that verification or resolve the historical Windows soak failures.
+
+## Windows connection investigation
+
+A follow-up on 4 November passed **81 valid-token read checks** from Windows:
+15 direct HTTPS requests, 18 requests pinned across the resolved server
+addresses, and 48 reads across all eight native SDKs. Every SDK also completed
+a bulk-write/keyset-scan test; all **8,024 rows** and eight test tables were
+verified removed.
+
+A separate [clean Windows/Linux diagnostic](https://github.com/originchaindb/originchaindb-python/actions/runs/41867782773)
+used deliberately invalid credentials. Both systems completed 12 of 15 requests
+with HTTP 401, but all three 320-KB uploads were interrupted during sending.
+A header-only control separately observed HTTP 401 with `Connection: close`
+before sending the body. This explains an early authentication refusal path;
+it does not identify the cause of the earlier valid-token soak timeouts. The
+diagnostic remains recorded as a failed experiment, and no SDK runtime fix or
+Windows endurance certification is claimed.
 
 ## Application integration
 
