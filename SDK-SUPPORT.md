@@ -118,8 +118,7 @@ pins and runtime versions. The delivered SDKs retain the tested executable code;
 subsequent changes affect documentation, build checks, CI, examples and a test clock tolerance.
 It covers one dedicated engine using hash-token provisioning. This isolated run
 did not change a production database or package registry. Separate live results
-are described below; multi-node recovery and additional server revisions remain
-under qualification.
+are described below, along with additional release and recovery checks.
 
 ## Live token lifecycle and row policies
 
@@ -141,6 +140,79 @@ This qualification covers canonical table grants and read-only tokens on the
 tested deployment. It is not a general security certification, a statement that
 all row-policy expressions are supported, or a guarantee for writes under RLS.
 Package publication remains paused.
+
+## Pinned engine revisions and recovery
+
+All eight SDKs passed **120 additional checks** against three pinned engine
+artifacts on 4 November 2026. Each SDK ran the same five checks on each artifact:
+bound parameters, invalid-token refusal, three acknowledged write batches,
+four keyset pages with exact row values, and a valid read on the existing client.
+
+| Engine artifact | Revision | Result |
+| --- | --- | --- |
+| `rel25.2` | `5b6f62e2cb8e` | 40 checks passed |
+| `rel25.1` | `f274503b0ca1` | 40 checks passed |
+| Artifact promoted 25 October 2026 (`ci` build tag) | `ddf868579cf2` | 40 checks passed |
+
+Artifact digests and the running binaries' reported revisions were verified.
+This is SQL and row-operation compatibility on these exact artifacts, not a
+supported version range. The control-plane token qualification above applies to
+`rel25.2`; it is not inferred for the older artifacts.
+
+Two isolated replication scenarios passed for every SDK on `rel25.2`:
+
+- With a healthy follower, acknowledged writes survived a writer-process crash
+  and manual follower promotion. The same client objects recovered and new
+  writes were read back.
+- With the follower stopped, each attempted write returned HTTP 503 once.
+  After both processes were killed and the follower was promoted, every earlier
+  acknowledged row remained and the unacknowledged test writes were absent.
+
+The two scenarios preserved **160 acknowledged rows** across the eight clients.
+They used separate engine processes and storage directories, TCP replication,
+`fsync=always`, one required follower acknowledgement, and a fixed test proxy.
+All nine test-engine processes exited; their storage and proxy listener were
+removed. The existing database service was not restarted.
+
+These checks exercise SDK behavior during isolated operator-driven recovery.
+They do not certify automatic elections, multi-host cloud failover, regional
+recovery, or a zero-loss guarantee for default asynchronous replication.
+
+## Large datasets and workload qualification
+
+All eight native SDKs completed two large-dataset verification stages against
+the deployed test database on 4 November 2026. Each stage used **1,000,000 rows**:
+125,000 per SDK, each with a deterministic key, integer value, and 256-byte
+payload. Each SDK wrote 125 batches of 1,000 rows and read its complete dataset
+through keyset pages of up to 10,000 rows. Row order, every value and payload,
+total count, and checksum matched. These are successful dataset stages within
+workload attempts; neither attempt completed the planned sustained workload.
+
+The **ten-minute sustained workload remains unverified**. Short ramps produced:
+
+| Dataset | Offered load and duration | Completed | Outcome |
+| --- | --- | --- | --- |
+| 1,000,000 rows | 8 requests/s for 30 seconds | 240 | Exact responses and acknowledged-write ledger; no client-pool drops |
+| 8,024 rows | 24 requests/s for 15 seconds | 360 | Exact responses and acknowledged-write ledger; no client-pool drops |
+| 8,024 rows | 50 requests/s for 20 seconds | 920 | 80 requests were not dispatched because clients were busy; offered-load target failed |
+
+The workload mixed 95% point reads with 5% inserts into separate test ledgers.
+It measured the entire path from a Windows client machine. Later attempts hit
+native transport timeouts, including unknown batch outcomes; writes were not
+automatically replayed. A read-only HTTP probe without an SDK also timed out.
+An authenticated tunnel did not produce a clean sustained run either.
+
+A separate host-local diagnostic completed four 1,000-row batches in 27–71 ms
+and verified all 4,000 rows. That narrows the investigation but does not identify
+the cause of the remote failures or turn failed attempts into passes. Earlier
+unclassified response failures are retained in the qualification records.
+
+All temporary workload tables were verified removed, including cleanup whose
+initial response was lost. The serving engine's process identity, binary digest,
+and restart count remained unchanged. These measurements establish the tested
+large-data behavior and short ramps; they do not establish sustained throughput,
+server capacity, or a production latency objective. The remaining gate is a
+complete sustained run from a stable, dedicated test client.
 
 ## Application integration
 
