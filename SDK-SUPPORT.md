@@ -104,6 +104,22 @@ workflow; a tampered artifact was rejected. Build artifacts expire after 14 days
 and are not registry releases. See any SDK's `docs/quality.md` for methodology,
 thresholds, reproduction, verification commands and future registry installation.
 
+## Isolated engine compatibility
+
+All eight native SDK clients passed **14 real-engine checks each (112 total)**
+on 4 November 2026. These cover newly provisioned hash tokens, invalid and expired
+tokens, tenant isolation, enforcement of read-only and table permissions, rotation on an
+existing client, revocation, valid-token recovery, bounded writes, keyset reads,
+revocation and valid-token persistence after restart, and absence of denied writes.
+The isolated engine shut down gracefully with no remaining test listeners.
+
+The qualification records the exact engine revision, binary digest, SDK source
+pins and runtime versions. The delivered SDKs retain the tested executable code;
+subsequent changes affect documentation, build checks, CI, examples and a test clock tolerance.
+It covers one dedicated engine using hash-token provisioning. Control-plane token
+issuance, multi-node failover, row-level security and other server revisions need
+separate qualification. No production database or package registry was changed.
+
 ## Application integration
 
 All eight SDKs include optional application-managed token providers, local request
@@ -139,9 +155,9 @@ or dispatched in this verification run.
   precision guidance in your language's README when mapping values into models.
 - Cancellation, concurrency, and client lifetime follow native runtime behavior.
   Ruby and PHP clients are intended for sequential use per client instance.
-- Live examples used an existing integration credential. Activation, expiry,
-  rotation, and revocation of the new token lifecycle are not certified by these
-  checks.
+- Live examples used an existing integration credential. The separate isolated
+  engine qualification above covers hash-token lifecycle behavior; it does not
+  certify control-plane token issuance.
 - Live checks establish behavior on the integration database used for this run.
   They do not establish a supported server-version range or a production rollout.
   Availability still depends on server features and token permissions.
