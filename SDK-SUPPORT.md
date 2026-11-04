@@ -116,9 +116,31 @@ The isolated engine shut down gracefully with no remaining test listeners.
 The qualification records the exact engine revision, binary digest, SDK source
 pins and runtime versions. The delivered SDKs retain the tested executable code;
 subsequent changes affect documentation, build checks, CI, examples and a test clock tolerance.
-It covers one dedicated engine using hash-token provisioning. Control-plane token
-issuance, multi-node failover, row-level security and other server revisions need
-separate qualification. No production database or package registry was changed.
+It covers one dedicated engine using hash-token provisioning. This isolated run
+did not change a production database or package registry. Separate live results
+are described below; multi-node recovery and additional server revisions remain
+under qualification.
+
+## Live token lifecycle and row policies
+
+All eight native SDKs passed **64 live checks** on 4 November 2026 against a
+dedicated test instance: actual control-plane token issuance, exact row filtering
+and column masking, ungranted-table and read-only write refusal, invalid-token
+rejection, rotation on existing client objects, and deletion followed by a
+confirmed database revocation receipt. Administrator reads established that the
+hidden fixture rows existed and denied writes left no row. The temporary tokens,
+linked identity, database user, role, grant, row policy, and tables were removed.
+
+Activation, rotation and revocation required propagation; an accepted management
+request did not mean every database target had applied it immediately. Each SDK
+now documents the same activation and revocation-state checks in
+`docs/authentication.md`. The SDK token provider supplies the current secret but
+does not manage control-plane sessions or promise uninterrupted rotation.
+
+This qualification covers canonical table grants and read-only tokens on the
+tested deployment. It is not a general security certification, a statement that
+all row-policy expressions are supported, or a guarantee for writes under RLS.
+Package publication remains paused.
 
 ## Application integration
 
@@ -155,9 +177,9 @@ or dispatched in this verification run.
   precision guidance in your language's README when mapping values into models.
 - Cancellation, concurrency, and client lifetime follow native runtime behavior.
   Ruby and PHP clients are intended for sequential use per client instance.
-- Live examples used an existing integration credential. The separate isolated
-  engine qualification above covers hash-token lifecycle behavior; it does not
-  certify control-plane token issuance.
+- Live examples used an existing integration credential. The additional live
+  qualification above separately verifies control-plane issuance, rotation,
+  revocation, and the listed read-only row-policy scenarios.
 - Live checks establish behavior on the integration database used for this run.
   They do not establish a supported server-version range or a production rollout.
   Availability still depends on server features and token permissions.
