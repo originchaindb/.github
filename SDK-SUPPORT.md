@@ -178,41 +178,58 @@ These checks exercise SDK behavior during isolated operator-driven recovery.
 They do not certify automatic elections, multi-host cloud failover, regional
 recovery, or a zero-loss guarantee for default asynchronous replication.
 
-## Large datasets and workload qualification
+## Large datasets and sustained workload
 
-All eight native SDKs completed two large-dataset verification stages against
-the deployed test database on 4 November 2026. Each stage used **1,000,000 rows**:
-125,000 per SDK, each with a deterministic key, integer value, and 256-byte
-payload. Each SDK wrote 125 batches of 1,000 rows and read its complete dataset
-through keyset pages of up to 10,000 rows. Row order, every value and payload,
-total count, and checksum matched. These are successful dataset stages within
-workload attempts; neither attempt completed the planned sustained workload.
+All eight native SDKs passed a complete large-data and sustained-workload run
+against the deployed test database on 4 November 2026:
 
-The **ten-minute sustained workload remains unverified**. Short ramps produced:
+- **1,000,000 rows:** 125,000 per SDK, with a deterministic key, integer value,
+  and 256-byte payload. Each SDK wrote 125 batches of 1,000 rows and read its
+  complete dataset through keyset pages of up to 10,000 rows. Every value,
+  payload, row order, total count, and checksum matched.
+- **Ten minutes at 24 requests/s:** all **14,400 requests** completed with exact
+  responses, zero reported errors, and zero client-pool drops. Each SDK completed
+  1,800 operations, including 90 writes. All **720 acknowledged writes** were
+  verified against the stored ledgers.
+- The preceding 8- and 24-request/s warm-ups also passed. All sixteen temporary
+  tables and the dedicated test-client container were removed afterward.
 
-| Dataset | Offered load and duration | Completed | Outcome |
+The sustained mix was 95% point reads and 5% inserts into separate ledgers.
+Clients ran on an existing Linux arm64 AWS runner, through the database's public
+HTTPS endpoint. The client container was limited to two CPUs and 4 GiB of memory,
+with four sequential client processes per SDK. Java used a 128 MiB maximum heap
+per process. The serving database process, binary digest, and restart count
+remained unchanged.
+
+Observed native-call latency includes the SDK and network path; it excludes
+the workload scheduler's queue and process IPC:
+
+| SDK | p50 (ms) | p95 (ms) | p99 (ms) |
 | --- | --- | --- | --- |
-| 1,000,000 rows | 8 requests/s for 30 seconds | 240 | Exact responses and acknowledged-write ledger; no client-pool drops |
-| 8,024 rows | 24 requests/s for 15 seconds | 360 | Exact responses and acknowledged-write ledger; no client-pool drops |
-| 8,024 rows | 50 requests/s for 20 seconds | 920 | 80 requests were not dispatched because clients were busy; offered-load target failed |
+| Python | 4.38 | 6.44 | 6.89 |
+| TypeScript / JavaScript | 4.16 | 6.55 | 6.93 |
+| Go | 3.57 | 6.62 | 6.91 |
+| Rust | 3.81 | 5.47 | 5.78 |
+| Java | 5.22 | 7.46 | 10.23 |
+| C# / .NET | 3.33 | 5.36 | 6.20 |
+| PHP | 3.34 | 5.69 | 6.08 |
+| Ruby | 3.95 | 6.68 | 7.27 |
 
-The workload mixed 95% point reads with 5% inserts into separate test ledgers.
-It measured the entire path from a Windows client machine. Later attempts hit
-native transport timeouts, including unknown batch outcomes; writes were not
-automatically replayed. A read-only HTTP probe without an SDK also timed out.
-An authenticated tunnel did not produce a clean sustained run either.
+Maximum sampled client-container memory was **1.55 GiB**. These samples
+include runtime overhead, allocator retention, and container cache; they are not
+a comparison of language memory efficiency.
 
-A separate host-local diagnostic completed four 1,000-row batches in 27–71 ms
-and verified all 4,000 rows. That narrows the investigation but does not identify
-the cause of the remote failures or turn failed attempts into passes. Earlier
-unclassified response failures are retained in the qualification records.
+Two earlier Windows runs also completed the million-row dataset stages. Their
+sustained attempts and later tunneled attempts encountered transport timeouts;
+an earlier response failure remains unclassified. Those failures are retained
+in the qualification records with their causes unassigned. A small-data
+50-request/s attempt completed 920 of 1,000 scheduled requests, with 80 client-pool
+drops, and failed its offered-load target.
 
-All temporary workload tables were verified removed, including cleanup whose
-initial response was lost. The serving engine's process identity, binary digest,
-and restart count remained unchanged. These measurements establish the tested
-large-data behavior and short ramps; they do not establish sustained throughput,
-server capacity, or a production latency objective. The remaining gate is a
-complete sustained run from a stable, dedicated test client.
+This is a bounded integration result at the stated workload and client location.
+It does not establish server saturation capacity, a production latency objective,
+or resolution of the earlier Windows-path failures. Package publication remains
+paused.
 
 ## Application integration
 
