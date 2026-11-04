@@ -12,14 +12,14 @@ Use the README's source-install instructions and pin a reviewed commit.
 
 | Language | Package or module | Source version | Verified source | CI |
 | --- | --- | --- | --- | --- |
-| Python | `originchain` | `1.0.0rc1` | [`a85801835902`](https://github.com/originchaindb/originchaindb-python/tree/a85801835902e3981c0829379700bc912cb3cb92) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41744676099) |
-| TypeScript / JavaScript | `@originchain/sdk` | `1.0.0-rc.1` | [`491219135c83`](https://github.com/originchaindb/originchaindb/tree/491219135c83a5bdc406f066f457a093cc56c9d9) | [Passed](https://github.com/originchaindb/originchaindb/actions/runs/41744727288) |
-| Go | `github.com/originchaindb/originchaindb-go` | `1.0.0-rc.1` source candidate | [`9c92fd216799`](https://github.com/originchaindb/originchaindb-go/tree/9c92fd216799d82c8a681e213d80d8dccaa79c1d) | [Passed](https://github.com/originchaindb/originchaindb-go/actions/runs/41744762447) |
-| Rust | `originchaindb` | `1.0.0-rc.1` | [`d138ac0a826c`](https://github.com/originchaindb/originchaindb-rust/tree/d138ac0a826cd6171369a6754fc02aff3ab05bb0) | [Passed](https://github.com/originchaindb/originchaindb-rust/actions/runs/41744794200) |
-| Java | `ai.originchain:originchaindb` | `1.0.0-rc.1` | [`110151267ad0`](https://github.com/originchaindb/originchaindb-java/tree/110151267ad010c0bb6a696815480015c099141a) | [Passed](https://github.com/originchaindb/originchaindb-java/actions/runs/41744831057) |
-| C# / .NET | `OriginChainDB` | `1.0.0-rc.1` | [`13adda7181d0`](https://github.com/originchaindb/originchaindb-csharp/tree/13adda7181d0771205f56a4b27f1a07f1e688195) | [Passed](https://github.com/originchaindb/originchaindb-csharp/actions/runs/41744873603) |
-| PHP | `originchain/originchaindb` | Composer development branch | [`b00504f5c04c`](https://github.com/originchaindb/originchaindb-php/tree/b00504f5c04cd7dda40ec056a9340adf4770ea5f) | [Passed](https://github.com/originchaindb/originchaindb-php/actions/runs/41744912727) |
-| Ruby | `originchaindb` | `1.0.0.rc.1` | [`676c6fd7e271`](https://github.com/originchaindb/originchaindb-ruby/tree/676c6fd7e271d73db9f2f50e9f2a98a6b35beaca) | [Passed](https://github.com/originchaindb/originchaindb-ruby/actions/runs/41744949341) |
+| Python | `originchain` | `1.0.0rc1` | [`b0e644b55511`](https://github.com/originchaindb/originchaindb-python/tree/b0e644b555119f9467e5e548d752270c04052d57) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41796179273) |
+| TypeScript / JavaScript | `@originchain/sdk` | `1.0.0-rc.1` | [`fa24bedd87ba`](https://github.com/originchaindb/originchaindb/tree/fa24bedd87ba2b9a5ab24ef1ae7bcec27191ae42) | [Passed](https://github.com/originchaindb/originchaindb/actions/runs/41796190525) |
+| Go | `github.com/originchaindb/originchaindb-go` | `1.0.0-rc.1` source candidate | [`5ae56598f153`](https://github.com/originchaindb/originchaindb-go/tree/5ae56598f153bf6da6d2d1020653ea6bbb976b1f) | [Passed](https://github.com/originchaindb/originchaindb-go/actions/runs/41796201205) |
+| Rust | `originchaindb` | `1.0.0-rc.1` | [`1f3abb90c208`](https://github.com/originchaindb/originchaindb-rust/tree/1f3abb90c208d56da19ef56207bf909ec5bcf2f6) | [Passed](https://github.com/originchaindb/originchaindb-rust/actions/runs/41796218898) |
+| Java | `ai.originchain:originchaindb` | `1.0.0-rc.1` | [`516acf6f7fdb`](https://github.com/originchaindb/originchaindb-java/tree/516acf6f7fdb130c4c4d0e315b9419639c87c73f) | [Passed](https://github.com/originchaindb/originchaindb-java/actions/runs/41796229863) |
+| C# / .NET | `OriginChainDB` | `1.0.0-rc.1` | [`481effed22ec`](https://github.com/originchaindb/originchaindb-csharp/tree/481effed22eca2395cc213e8b332282c3a7f7705) | [Passed](https://github.com/originchaindb/originchaindb-csharp/actions/runs/41796246351) |
+| PHP | `originchain/originchaindb` | Composer development branch | [`ae503a05bff4`](https://github.com/originchaindb/originchaindb-php/tree/ae503a05bff4ce61ba732f537903a5f8b14cd4e8) | [Passed](https://github.com/originchaindb/originchaindb-php/actions/runs/41796257197) |
+| Ruby | `originchaindb` | `1.0.0.rc.1` | [`5340046cfe5f`](https://github.com/originchaindb/originchaindb-ruby/tree/5340046cfe5f58eb0aabc152960fc76bf5e0a45f) | [Passed](https://github.com/originchaindb/originchaindb-ruby/actions/runs/41796273383) |
 
 Python's import remains `originchain`; the TypeScript SDK also supports
 JavaScript. Ruby uses the normalized gem version shown above. PHP has no
@@ -28,7 +28,7 @@ use the commit-based installation in its README.
 
 ## Runtime coverage
 
-All **30 CI jobs** linked above passed. This table lists tested configurations,
+All **46 CI jobs** linked above passed. This table lists tested configurations,
 not an assertion that every other runtime or operating system is supported.
 The `stable` entries refer to the toolchain resolved by the linked CI run.
 
@@ -61,7 +61,7 @@ contract fixture and CI consumer. They also pass the shared **nine-request failu
 contract**: expired/revoked responses, permission denial, rate limiting with
 Retry-After, interrupted writes without replay, timeout, credential rotation,
 observer isolation, and typed row conversion. Native tests cover cancellation
-where the runtime supports it. CI checks both fixtures against the
+where the runtime supports it. CI checks all three fixtures against the
 [pinned common contract](sdk-contract/v1/README.md).
 
 All eight runnable catalog programs were also built or syntax-checked and
@@ -76,6 +76,33 @@ executed against an isolated integration database. They passed:
 Each SDK README links to its complete example program and explains the setup,
 result fields, and example commands.
 The examples write data and require the corresponding database permissions.
+
+## Bounded operations and build quality
+
+All eight SDKs expose native lazy batch-write, page and row iterators. Batch
+writes default to 1,000 rows / 1 MiB and report each acknowledged input range.
+Failures preserve the cause and distinguish unsent from unknown outcomes;
+unknown writes are never automatically replayed. Keyset reads default to 1,000
+rows and require a unique immutable non-null string key with binary ordering.
+They do not provide a snapshot across pages or a streaming JSON parser.
+
+The common **21-request iteration contract** passes across the runtime matrix.
+All eight complete bulk/read/resume programs also ran successfully on fresh
+development namespaces; their inserted rows were removed after verification.
+The READMEs link to setup, checkpoint, cancellation and recovery guides.
+
+CI checks native public API signatures, installs each built artifact into a
+fresh application, and measures connection reuse, concurrent requests, large
+responses, latency and memory. Performance gates compare three-run medians with
+reviewed Linux runner baselines. These measure SDK transport overhead, not
+database performance. Deliberately removed APIs, extra latency and extra memory
+were rejected by the corresponding guards.
+
+Successful main builds carry GitHub OIDC/Sigstore provenance. Each downloaded
+artifact was verified against its repository, exact source revision and CI
+workflow; a tampered artifact was rejected. Build artifacts expire after 14 days
+and are not registry releases. See any SDK's `docs/quality.md` for methodology,
+thresholds, reproduction, verification commands and future registry installation.
 
 ## Application integration
 

@@ -12,7 +12,8 @@ examples.
 
 Every README includes installation, a first query, error handling, and a complete
 product catalog example covering SQL, rows, vectors, full-text search, and graph
-relationships.
+relationships. Bulk-write and paginated-read guides explain bounded processing,
+checkpoints, cancellation, and recovery in each language.
 
 | Language | Installation and guide |
 | --- | --- |
@@ -62,6 +63,8 @@ permission to register schemas and read/write the example data.
 | Vector search | Store an embedding and find similar records | [Vector example](https://github.com/originchaindb/originchaindb-python#search-by-vector-similarity) |
 | Full-text search | Index product descriptions and retrieve BM25 matches | [FTS example](https://github.com/originchaindb/originchaindb-python#search-text) |
 | Graph relationships | Define a relation and traverse neighboring products | [Graph example](https://github.com/originchaindb/originchaindb-python#follow-graph-relationships) |
+| Bulk writes | Consume rows in bounded batches and handle partial progress | [Bulk guide](https://github.com/originchaindb/originchaindb-python/blob/main/docs/bulk-and-pagination.md#write-a-producer-without-loading-it-all) |
+| Paginated reads | Iterate rows lazily and resume from a processed page | [Pagination guide](https://github.com/originchaindb/originchaindb-python/blob/main/docs/bulk-and-pagination.md#read-one-page-at-a-time) |
 
 These walkthrough links use Python; the SDK guides above contain the equivalent
 examples in every language, including schema setup and expected result fields.
