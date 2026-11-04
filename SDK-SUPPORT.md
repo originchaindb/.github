@@ -12,14 +12,14 @@ Use the README's source-install instructions and pin a reviewed commit.
 
 | Language | Package or module | Source version | Verified source | CI |
 | --- | --- | --- | --- | --- |
-| Python | `originchain` | `1.0.0rc1` | [`194088399f27`](https://github.com/originchaindb/originchaindb-python/tree/194088399f277fa105fd9691c8d9b3637eec3c4b) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41737112031) |
-| TypeScript / JavaScript | `@originchain/sdk` | `1.0.0-rc.1` | [`a884c3a24eea`](https://github.com/originchaindb/originchaindb/tree/a884c3a24eeaf91b5311fbcfc2c60adfa066ac94) | [Passed](https://github.com/originchaindb/originchaindb/actions/runs/41737131569) |
-| Go | `github.com/originchaindb/originchaindb-go` | `1.0.0-rc.1` source candidate | [`494448f8fbbb`](https://github.com/originchaindb/originchaindb-go/tree/494448f8fbbbf637fcee4f92b4e0fd740e7f48ef) | [Passed](https://github.com/originchaindb/originchaindb-go/actions/runs/41737146352) |
-| Rust | `originchaindb` | `1.0.0-rc.1` | [`1060394037ef`](https://github.com/originchaindb/originchaindb-rust/tree/1060394037ef631833f709c4bd432af088027d3d) | [Passed](https://github.com/originchaindb/originchaindb-rust/actions/runs/41737166332) |
-| Java | `ai.originchain:originchaindb` | `1.0.0-rc.1` | [`f3eb55fe3745`](https://github.com/originchaindb/originchaindb-java/tree/f3eb55fe3745a1f245a5c3b3918788d4bc55fe03) | [Passed](https://github.com/originchaindb/originchaindb-java/actions/runs/41737182682) |
-| C# / .NET | `OriginChainDB` | `1.0.0-rc.1` | [`1b49700f6496`](https://github.com/originchaindb/originchaindb-csharp/tree/1b49700f64969fcac9fe8117e4008f059ee263d6) | [Passed](https://github.com/originchaindb/originchaindb-csharp/actions/runs/41737197849) |
-| PHP | `originchain/originchaindb` | Composer development branch | [`0a502d297c6d`](https://github.com/originchaindb/originchaindb-php/tree/0a502d297c6d797055ea8213a07ff5d09d330b85) | [Passed](https://github.com/originchaindb/originchaindb-php/actions/runs/41737214570) |
-| Ruby | `originchaindb` | `1.0.0.rc.1` | [`17cb1d36498e`](https://github.com/originchaindb/originchaindb-ruby/tree/17cb1d36498e38bdbfd9176b440ea68c1342919d) | [Passed](https://github.com/originchaindb/originchaindb-ruby/actions/runs/41737232155) |
+| Python | `originchain` | `1.0.0rc1` | [`a85801835902`](https://github.com/originchaindb/originchaindb-python/tree/a85801835902e3981c0829379700bc912cb3cb92) | [Passed](https://github.com/originchaindb/originchaindb-python/actions/runs/41744676099) |
+| TypeScript / JavaScript | `@originchain/sdk` | `1.0.0-rc.1` | [`491219135c83`](https://github.com/originchaindb/originchaindb/tree/491219135c83a5bdc406f066f457a093cc56c9d9) | [Passed](https://github.com/originchaindb/originchaindb/actions/runs/41744727288) |
+| Go | `github.com/originchaindb/originchaindb-go` | `1.0.0-rc.1` source candidate | [`9c92fd216799`](https://github.com/originchaindb/originchaindb-go/tree/9c92fd216799d82c8a681e213d80d8dccaa79c1d) | [Passed](https://github.com/originchaindb/originchaindb-go/actions/runs/41744762447) |
+| Rust | `originchaindb` | `1.0.0-rc.1` | [`d138ac0a826c`](https://github.com/originchaindb/originchaindb-rust/tree/d138ac0a826cd6171369a6754fc02aff3ab05bb0) | [Passed](https://github.com/originchaindb/originchaindb-rust/actions/runs/41744794200) |
+| Java | `ai.originchain:originchaindb` | `1.0.0-rc.1` | [`110151267ad0`](https://github.com/originchaindb/originchaindb-java/tree/110151267ad010c0bb6a696815480015c099141a) | [Passed](https://github.com/originchaindb/originchaindb-java/actions/runs/41744831057) |
+| C# / .NET | `OriginChainDB` | `1.0.0-rc.1` | [`13adda7181d0`](https://github.com/originchaindb/originchaindb-csharp/tree/13adda7181d0771205f56a4b27f1a07f1e688195) | [Passed](https://github.com/originchaindb/originchaindb-csharp/actions/runs/41744873603) |
+| PHP | `originchain/originchaindb` | Composer development branch | [`b00504f5c04c`](https://github.com/originchaindb/originchaindb-php/tree/b00504f5c04cd7dda40ec056a9340adf4770ea5f) | [Passed](https://github.com/originchaindb/originchaindb-php/actions/runs/41744912727) |
+| Ruby | `originchaindb` | `1.0.0.rc.1` | [`676c6fd7e271`](https://github.com/originchaindb/originchaindb-ruby/tree/676c6fd7e271d73db9f2f50e9f2a98a6b35beaca) | [Passed](https://github.com/originchaindb/originchaindb-ruby/actions/runs/41744949341) |
 
 Python's import remains `originchain`; the TypeScript SDK also supports
 JavaScript. Ruby uses the normalized gem version shown above. PHP has no
@@ -57,7 +57,12 @@ TypeScript also have additional helpers outside this common core.
 All eight SDKs passed the same **24-request HTTP contract**, covering request
 shapes, response handling, precision, partial batch failures, authentication
 errors, server errors, and redirect refusal. Each repository includes the
-contract fixture and CI consumer.
+contract fixture and CI consumer. They also pass the shared **nine-request failure
+contract**: expired/revoked responses, permission denial, rate limiting with
+Retry-After, interrupted writes without replay, timeout, credential rotation,
+observer isolation, and typed row conversion. Native tests cover cancellation
+where the runtime supports it. CI checks both fixtures against the
+[pinned common contract](sdk-contract/v1/README.md).
 
 All eight runnable catalog programs were also built or syntax-checked and
 executed against an isolated integration database. They passed:
@@ -71,6 +76,30 @@ executed against an isolated integration database. They passed:
 Each SDK README links to its complete example program and explains the setup,
 result fields, and example commands.
 The examples write data and require the corresponding database permissions.
+
+## Application integration
+
+All eight SDKs include optional application-managed token providers, local request
+observers, typed row conversion, and native HTTP configuration. Static-token
+construction stays available. Method names and types follow each language's
+conventions while sharing the same wire contract and failure-test scenarios.
+
+Each repository has `docs/api/v1/README.md`, `docs/migration-v1.md`, and a complete
+application integration example. All eight examples passed on the integration
+database: a bound read-only SQL query, native HTTP configuration, a credential
+provider, conversion into an application model, and a local request observer.
+The .NET example uses `IHttpClientFactory` and dependency injection.
+
+Observers expose only method, operation family, elapsed time, HTTP status,
+request ID and error category. They do not include URLs, SQL, parameters,
+credentials or response bodies, and they do not enable a telemetry exporter.
+
+Each SDK also includes a manually dispatched `Live integration` workflow. These
+workflows require the `sdk-integration` environment and its credentials; configure
+a required reviewer and restrict deployments to `main` before adding secrets.
+Their setup is documented in `docs/live-testing.md`. The evidence above comes from
+local live execution; these GitHub environment workflows have not been enabled
+or dispatched in this verification run.
 
 ## Compatibility boundaries
 
@@ -94,10 +123,19 @@ The examples write data and require the corresponding database permissions.
 
 | Project | Scope | Compatibility status |
 | --- | --- | --- |
-| [LangChain](https://github.com/originchaindb/langchain-originchain) | Python vector-store adapter | Earlier Python SDK source pin; compatibility with the 1.0 candidate has not been verified; proprietary license |
-| [LlamaIndex](https://github.com/originchaindb/llama-index-vector-stores-originchain) | Python vector-store adapter | Earlier Python SDK source pin; compatibility with the 1.0 candidate has not been verified; proprietary license |
+| [LangChain](https://github.com/originchaindb/langchain-originchain) | Python vector-store adapter | `0.2.0rc1` unpublished source; rebuilt Python SDK `1.0.0rc1`; [verified commit](https://github.com/originchaindb/langchain-originchain/tree/a5a727985d6178b72d7c00f7f04f0d2730a12b8d); [CI](https://github.com/originchaindb/langchain-originchain/actions/runs/41744979600); proprietary license |
+| [LlamaIndex](https://github.com/originchaindb/llama-index-vector-stores-originchain) | Python vector-store adapter | `0.2.0rc1` unpublished source; rebuilt Python SDK `1.0.0rc1`; [verified commit](https://github.com/originchaindb/llama-index-vector-stores-originchain/tree/eebe7433b5617353e010020013610dc6c3ef76eb); [CI](https://github.com/originchaindb/llama-index-vector-stores-originchain/actions/runs/41745009994); proprietary license |
 | [MCP server](https://github.com/originchaindb/mcp-server) | SQL, vector search, full-text search, and schema discovery over stdio; Node 20+ | Separate project and verification; not included in the eight-SDK checks above; MIT license |
 
 Follow each integration's own README for installation, permissions, and
 limitations. This matrix does not certify additional language clients or mobile
 platforms outside the configurations listed above.
+
+Both adapter acceptance workflows pass four configurations: minimum framework on
+Python 3.10, current framework on Python 3.12 and 3.14, and Python 3.12 on Windows.
+The checks build wheel/sdist archives and repeat tests with installed wheels.
+LangChain has 31 acceptance tests and LlamaIndex has 38. Both passed real-database
+add/search/delete checks using supplied two-dimensional fixture embeddings; test
+documents and vectors were verified absent afterward. Empty schema definitions
+remain in their isolated integration namespaces. No external embedding service
+was called. This is integration-instance evidence, not server-version certification.

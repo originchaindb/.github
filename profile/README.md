@@ -74,10 +74,11 @@ examples in every language, including schema setup and expected result fields.
 | LlamaIndex vector store | [llama-index-vector-stores-originchain](https://github.com/originchaindb/llama-index-vector-stores-originchain) |
 | MCP server for SQL, vector search, full-text search, and schema discovery | [mcp-server](https://github.com/originchaindb/mcp-server) |
 
-These projects have separate installation and compatibility requirements. The
-LangChain and LlamaIndex adapters use an earlier Python SDK source pin and have
-proprietary licenses. Their compatibility with the 1.0 candidates has not yet
-been verified. See each repository's README and license before integrating.
+The LangChain and LlamaIndex source candidates are verified with the rebuilt
+Python SDK, including real-database add/search/delete checks. They retain their
+proprietary licenses and have separate installation requirements. See the
+[SDK support matrix](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md) for exact commits, CI coverage, and package
+availability; follow each integration's README and license.
 
 ## Support and contributions
 
