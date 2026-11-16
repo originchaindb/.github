@@ -6,7 +6,7 @@ Build with the official OriginChainDB SDKs. Each SDK follows its language's
 conventions and shares the same core operations, connection settings, and
 examples.
 
-[Website](https://originchaindb.com/) | [Documentation](https://originchaindb.com/docs/) | [SDK support](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md)
+[Website](https://originchaindb.com/) | [Documentation](https://originchaindb.com/docs/) | [MCP server](https://github.com/originchaindb/mcp-server) | [SDK support](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md)
 
 ## Choose your SDK
 
@@ -30,6 +30,14 @@ checkpoints, cancellation, and recovery in each language.
 README. These candidates have not been published to package registries; existing
 registry packages can have a different API. Exact versions, verified commits,
 and CI results are in the [support matrix](https://github.com/originchaindb/.github/blob/main/SDK-SUPPORT.md).
+
+## Connect an AI assistant (MCP)
+
+The [OriginChainDB MCP server](https://github.com/originchaindb/mcp-server) lets Claude, Cursor, VS Code
+and other MCP clients query your database with SQL, read-only graph, vector and full-text tools.
+Install it from npm as [`@originchain-db/mcp-server`](https://www.npmjs.com/package/@originchain-db/mcp-server),
+or use the one-click Cursor and VS Code links in its README. It needs two values: `OC_URL` and an
+access token in `OC_TOKEN`. Setup for each client: [MCP guide](https://originchaindb.com/docs/integrations/mcp).
 
 ## Connect and run a query
 
