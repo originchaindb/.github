@@ -330,7 +330,7 @@ or dispatched in this verification run.
 | --- | --- | --- |
 | [LangChain](https://github.com/originchaindb/langchain-originchain) | Python vector-store adapter | `0.2.0rc1` unpublished source; rebuilt Python SDK `1.0.0rc1`; [verified commit](https://github.com/originchaindb/langchain-originchain/tree/a5a727985d6178b72d7c00f7f04f0d2730a12b8d); [CI](https://github.com/originchaindb/langchain-originchain/actions/runs/41744979600); proprietary license |
 | [LlamaIndex](https://github.com/originchaindb/llama-index-vector-stores-originchain) | Python vector-store adapter | `0.2.0rc1` unpublished source; rebuilt Python SDK `1.0.0rc1`; [verified commit](https://github.com/originchaindb/llama-index-vector-stores-originchain/tree/eebe7433b5617353e010020013610dc6c3ef76eb); [CI](https://github.com/originchaindb/llama-index-vector-stores-originchain/actions/runs/41745009994); proprietary license |
-| [MCP server](https://github.com/originchaindb/mcp-server) | SQL, vector search, full-text search, and schema discovery over stdio; Node 20+ | Separate project and verification; not included in the eight-SDK checks above; MIT license |
+| [MCP server](https://github.com/originchaindb/mcp-server) | SQL, read-only graph (Cypher), vector search, full-text search, and schema discovery over stdio; Node 20+ | Published on npm as [`@originchain-db/mcp-server`](https://www.npmjs.com/package/@originchain-db/mcp-server) `0.4.0`; tested in its own CI on Node 20, 22 and 24, not in the eight-SDK checks above; MIT license |
 
 Follow each integration's own README for installation, permissions, and
 limitations. This matrix does not certify additional language clients or mobile
